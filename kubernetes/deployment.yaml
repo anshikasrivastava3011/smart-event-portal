@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: eventportal-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: eventportal
+
+  template:
+    metadata:
+      labels:
+        app: eventportal
+
+    spec:
+      containers:
+        - name: eventportal
+          image: anshikasrivastava3011/eventportal:v1
+
+          ports:
+            - containerPort: 3000
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
