@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Event Management Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Smart Event Management Portal</h1>
+        <p>Discover and book amazing events</p>
+        <span class="version">Version 1.0</span>
+    </header>
+
+    <main>
+        <section>
+            <h2>Upcoming Events</h2>
+            <div id="event-list" class="event-grid"></div>
+        </section>
+
+        <section class="form-section">
+            <h2>Book Event</h2>
+
+            <form id="booking-form">
+                <input
+                    type="text"
+                    id="user-name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <select id="event-select" required>
+                    <option value="">Select an event</option>
+                </select>
+
+                <input
+                    type="number"
+                    id="tickets"
+                    placeholder="Number of tickets"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">Book Tickets</button>
+            </form>
+
+            <p id="booking-message"></p>
+        </section>
+
+        <section>
+            <h2>Booking History</h2>
+            <div id="booking-history"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Smart Event Portal | DevOps Capstone Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
