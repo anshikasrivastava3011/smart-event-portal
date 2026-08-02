@@ -1,8 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    options {
+        skipDefaultCheckout(true)
+    }
 
+    stages {
         stage('Checkout') {
             steps {
                 checkout scm
@@ -11,13 +14,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'call npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'npm test'
+                bat 'call npm test'
             }
         }
 
@@ -26,7 +29,6 @@ pipeline {
                 bat 'docker build -t eventportal:v2 .'
             }
         }
-
     }
 
     post {
