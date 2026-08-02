@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #182848;
+    background-color: #00897b;
     color: white;
     text-align: center;
     padding: 35px 20px;
@@ -94,7 +94,7 @@ select {
 }
 
 button {
-    background-color: #182848;
+    background-color: #00897b;
     color: white;
     border: none;
     cursor: pointer;
@@ -118,7 +118,7 @@ button:hover {
 }
 
 footer {
-    background-color: #182848;
+    background-color: #00897b;
     color: white;
     text-align: center;
     padding: 20px;
